@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#ffffff"/>
+  <rect x="35" y="70" width="230" height="170" rx="14" fill="#f3e3c3" stroke="#d1b37a" stroke-width="3"/>
+  <g fill="#b8732e" stroke="#7a4517" stroke-width="3">
+    <path d="M70 200 Q60 120 105 105 Q130 100 125 130 Q120 150 100 145" />
+    <path d="M140 200 Q130 120 175 105 Q200 100 195 130 Q190 150 170 145" />
+    <path d="M210 200 Q200 120 245 105 Q260 105 255 135 Q250 150 235 145" />
+  </g>
+  <text x="150" y="228" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#7a4517" text-anchor="middle">Kanelgifler</text>
+  <text x="150" y="55" font-family="Arial, sans-serif" font-size="16" fill="#555" text-anchor="middle">8 stk</text>
+</svg>

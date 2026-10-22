@@ -65,10 +65,14 @@ function fetchGameData(gameNumber) {
   fetch("./games.json")
     .then((response) => response.json())
     .then((json) => {
-      productName = json[`game-${gameNumber}`].name;
-      productPrice = json[`game-${gameNumber}`].price;
-      productPrice = Number(productPrice.slice(1, productPrice.length));
-      productImage = json[`game-${gameNumber}`].image;
+      //Cycle through the product list so a short list never runs out
+      const gameCount = Object.keys(json).length;
+      const game = json[`game-${((gameNumber - 1) % gameCount) + 1}`];
+
+      productName = game.name;
+      //Prices are stored like "24.95 kr."
+      productPrice = parseFloat(game.price);
+      productImage = game.image;
 
       initializeGame();
     });
@@ -142,13 +146,13 @@ function updateGuessStat() {
   const guessStats = document.getElementById("game-stats");
   if (gameState.hasWon) {
     guessStats.innerHTML = `<center>You win! Congratulations!🎉</center>`;
-    guessStats.innerHTML += `<center>The price was $${productPrice}</center>`;
+    guessStats.innerHTML += `<center>The price was ${productPrice.toFixed(2)} kr.</center>`;
     return;
   }
 
   if (gameState.guesses.length === 6) {
     guessStats.innerHTML = `<center>Better luck next time!</center>`;
-    guessStats.innerHTML += `<center>The price was $${productPrice}</center>`;
+    guessStats.innerHTML += `<center>The price was ${productPrice.toFixed(2)} kr.</center>`;
   } else {
     guessStats.innerHTML = `Guess: ${gameState.guesses.length + 1}/6`;
   }
@@ -357,7 +361,7 @@ function displayGuess(guess, index = gameState.guesses.length) {
 
   infoContainer.classList.add("guess-direction-container", "animate__flipInX");
 
-  guessValueContainer.innerHTML = `$${guess.guess}`;
+  guessValueContainer.innerHTML = `${guess.guess} kr.`;
 
   infoContainer.classList.add(guess.closeness);
   infoContainer.innerHTML = guess.direction;

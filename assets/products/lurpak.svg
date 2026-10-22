@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#ffffff"/>
+  <ellipse cx="150" cy="235" rx="110" ry="18" fill="#e6e6e6"/>
+  <path d="M50 130 L250 130 L240 230 L60 230 Z" fill="#c9a227"/>
+  <rect x="45" y="105" width="210" height="30" rx="6" fill="#d8b43a"/>
+  <path d="M60 150 L240 150 L234 210 L66 210 Z" fill="#f4f1e6"/>
+  <text x="150" y="190" font-family="Georgia, serif" font-size="34" font-weight="bold" fill="#1d3b6e" text-anchor="middle">Lurpak</text>
+  <text x="150" y="85" font-family="Arial, sans-serif" font-size="16" fill="#555" text-anchor="middle">SMØR · 200 g</text>
+</svg>

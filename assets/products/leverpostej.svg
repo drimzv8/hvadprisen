@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#ffffff"/>
+  <ellipse cx="150" cy="235" rx="115" ry="18" fill="#e6e6e6"/>
+  <path d="M45 120 L255 120 L240 230 L60 230 Z" fill="#c8102e"/>
+  <rect x="40" y="100" width="220" height="26" rx="6" fill="#e8e8e8" stroke="#bbb" stroke-width="2"/>
+  <rect x="70" y="145" width="160" height="60" rx="8" fill="#ffffff"/>
+  <text x="150" y="172" font-family="Georgia, serif" font-size="26" font-weight="bold" fill="#c8102e" text-anchor="middle">Stryhns</text>
+  <text x="150" y="196" font-family="Arial, sans-serif" font-size="15" fill="#333" text-anchor="middle">Leverpostej</text>
+  <text x="150" y="80" font-family="Arial, sans-serif" font-size="16" fill="#555" text-anchor="middle">400 g</text>
+</svg>

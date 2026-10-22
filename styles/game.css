@@ -164,6 +164,7 @@
   flex: 1;
   justify-content: center;
 
+  min-width: 52px;
   height: 40px;
 
   border-right: 2px solid black;
@@ -175,6 +176,7 @@
   font-size: 24px;
 
   width: 180px;
+  min-width: 0;
   height: 40px;
   padding-left: 6px;
 

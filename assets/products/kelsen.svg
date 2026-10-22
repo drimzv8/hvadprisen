@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#ffffff"/>
+  <ellipse cx="150" cy="215" rx="115" ry="35" fill="#123a7a"/>
+  <rect x="35" y="110" width="230" height="105" fill="#1d4f9e"/>
+  <ellipse cx="150" cy="110" rx="115" ry="35" fill="#2a63bf" stroke="#d4af37" stroke-width="4"/>
+  <text x="150" y="118" font-family="Georgia, serif" font-size="30" font-style="italic" font-weight="bold" fill="#ffffff" text-anchor="middle">Kelsen</text>
+  <text x="150" y="175" font-family="Arial, sans-serif" font-size="16" fill="#f5e6b8" text-anchor="middle">DANISH BUTTER COOKIES</text>
+  <text x="150" y="200" font-family="Arial, sans-serif" font-size="14" fill="#f5e6b8" text-anchor="middle">908 g</text>
+</svg>
