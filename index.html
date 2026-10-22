@@ -1,26 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>COSTCODLE</title>
-
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-J8Q97VV1GQ"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-J8Q97VV1GQ");
-    </script>
+    <title>HVADPRISEN?</title>
+    <meta
+      name="description"
+      content="Gæt prisen på dagens danske dagligvare på 6 forsøg."
+    />
 
     <!-- Favicon Configuration -->
+    <link rel="icon" type="image/svg+xml" href="/public/favicon.svg" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -42,12 +32,12 @@
     <link
       rel="mask-icon"
       href="/public/safari-pinned-tab.svg"
-      color="#5bbad5"
+      color="#c8102e"
     />
     <link rel="shortcut icon" href="/public/favicon.ico" />
-    <meta name="msapplication-TileColor" content="#dcdcdc" />
+    <meta name="msapplication-TileColor" content="#c8102e" />
     <meta name="msapplication-config" content="/public/browserconfig.xml" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#faf9f6" />
 
     <link rel="stylesheet" href="styles/game.css" />
     <link rel="stylesheet" href="styles/overlay.css" />
@@ -61,7 +51,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap"
       rel="stylesheet"
     />
 
@@ -78,15 +68,26 @@
     <div id="main-page">
       <header id="site-header">
         <div id="header-container">
-          <button id="info-button" data-overlay="info-overlay" type="button">
+          <button
+            id="info-button"
+            data-overlay="info-overlay"
+            type="button"
+            aria-label="Sådan spiller du"
+          >
             ?
           </button>
-          <h1 id="title" class="title costco-red">
-            <center>COSTCO<span class="costco-blue">DLE</span></center>
+          <h1 id="title" class="title brand-ink">
+            <center>HVAD<span class="brand-red">PRISEN?</span></center>
           </h1>
-          <button id="stat-button" data-overlay="stats-overlay" type="button">
+          <button
+            id="stat-button"
+            data-overlay="stats-overlay"
+            type="button"
+            aria-label="Statistik"
+          >
             <img
               src="./assets/stat-logo.svg"
+              alt=""
               style="height: 100%; width: 100%"
             />
           </button>
@@ -95,7 +96,7 @@
 
       <main id="game-container">
         <div id="share-toast" class="animate__animated hide">
-          <center>Results copied to clipboard</center>
+          <center>Resultat kopieret til udklipsholderen</center>
         </div>
         <div id="info-card" class="animate__animated">
           <div id="image-container"></div>
@@ -104,7 +105,7 @@
         <div id="game-stats"></div>
         <div id="guesses-container">
           <div id="warning-toast" class="animate__animated hide">
-            <center>Invalid Guess ⚠️</center>
+            <center>Ugyldigt gæt ⚠️</center>
           </div>
           <div id="1" class="guess-container"></div>
           <div id="2" class="guess-container"></div>
@@ -121,41 +122,40 @@
               <input
                 id="guess-input"
                 type="text"
+                inputmode="decimal"
                 pattern="^\d{1,3}(,\d{3})*(\.\d+)?$"
                 data-type="currency"
-                placeholder="Enter a guess..."
+                placeholder="Indtast et gæt..."
               />
             </div>
             <div id="button-container">
-              <button id="guess-button" class="active">SUBMIT</button>
+              <button id="guess-button" class="active">GÆT</button>
             </div>
           </div>
         </div>
         <div id="info-overlay" class="overlay" style="display: none">
           <div id="info-body" class="overlay-body">
             <div class="info-section">
-              <h3><u>The game</u></h3>
+              <h3>Spillet</h3>
               <p>
-                Guess the <span class="costco-red">COSTCO</span
-                ><span class="costco-blue">DLE</span> in 6 tries.
+                Gæt <span class="brand-ink">HVAD</span
+                ><span class="brand-red">PRISEN?</span> er på 6 forsøg.
               </p>
               <br />
               <ul style="list-style-type: square">
-                <li>Each guess must be a valid price.</li>
-                <li>
-                  Incorrect guesses will help guide you to the target price.
-                </li>
+                <li>Hvert gæt skal være en gyldig pris i kroner.</li>
+                <li>Forkerte gæt viser dig vejen mod den rigtige pris.</li>
               </ul>
               <br />
-              <p>If you guess within 5% of the target price, you win!</p>
+              <p>Rammer du inden for 5% af prisen, har du vundet!</p>
               <br />
               <p>
-                A new <span class="costco-red">COSTCO</span
-                ><span class="costco-blue">DLE</span> is available every day!
+                Der er en ny <span class="brand-ink">HVAD</span
+                ><span class="brand-red">PRISEN?</span> hver dag!
               </p>
             </div>
             <div class="info-section">
-              <h3><u>Examples</u></h3>
+              <h3>Eksempler</h3>
               <div class="guess-container transparent-background">
                 <div class="guess-value-container animate__flipInX">10.00 kr.</div>
                 <div
@@ -165,8 +165,7 @@
                 </div>
               </div>
               <p>
-                First guess of 10.00 kr. is low by more than 25% of the target
-                price.
+                Første gæt på 10.00 kr. er mere end 25% under den rigtige pris.
               </p>
               <br />
               <div class="guess-container transparent-background">
@@ -178,8 +177,8 @@
                 </div>
               </div>
               <p>
-                Next guess of 18.00 kr. is too high but within 25% of the target
-                price.
+                Næste gæt på 18.00 kr. er for højt, men inden for 25% af den
+                rigtige pris.
               </p>
               <br />
               <div class="guess-container transparent-background">
@@ -191,97 +190,41 @@
                 </div>
               </div>
               <p>
-                The guess of 16.00 kr. was within 5% of the target price! You win!
+                Gættet på 16.00 kr. var inden for 5% af den rigtige pris. Du
+                vandt!
               </p>
             </div>
             <div class="info-section">
-              <p>
-                If you would like to support my work, you can
-                <a
-                  href="https://www.buymeacoffee.com/kerm"
-                  target="_blank"
-                  noreferrer="noopener noreferrer"
-                  >buy me a coffee!<span style="font-size: 14px">☕</span></a
-                >
-              </p>
-            </div>
-            <div class="info-section">
-              <p>
-                Source code available on my
-                <a
-                  href="https://github.com/KermWasTaken"
-                  target="_blank"
-                  noreferrer="noopener noreferrer"
-                  >GitHub</a
-                >!
-              </p>
-              <p>
-                Suggestions? Find a bug?
-                <a href="mailto: costcodle@gmail.com">Let me know!</a>
-              </p>
-            </div>
-            <div class="info-section">
-              <p>
-                Special thanks to
-                <a
-                  href="https://oec.world/en/tradle/"
-                  target="_blank"
-                  noreferrer="noopener noreferrer"
-                >
-                  <span style="color: rgb(255, 166, 63)">TRAD</span>LE</a
-                >
-                and
-                <a
-                  href="https://www.nytimes.com/games/wordle/index.html"
-                  target="_blank"
-                  noreferrer="noopener noreferrer"
-                  >Wordle</a
-                >
-                for inspiring <span class="costco-red">COSTCO</span
-                ><span class="costco-blue">DLE</span>!
-              </p>
-              <br />
-              <p>And thank you for checking out my game!</p>
-            </div>
-            <div style="margin-top: 8px">
-              <p>
-                Created by
-                <a
-                  href="https://github.com/KermWasTaken"
-                  target="_blank"
-                  noreferrer="noopener noreferrer"
-                  >@Kerm</a
-                >
-              </p>
+              <p>Tak fordi du spiller med. Vi ses i morgen!</p>
             </div>
           </div>
         </div>
         <div id="stats-overlay" class="overlay" style="display: none">
           <div id="stat-body" class="overlay-body">
-            <p id="statistics-title">STATISTICS</p>
+            <p id="statistics-title">STATISTIK</p>
             <div id="statistics">
               <div class="statistic">
                 <div id="number-wins" class="stat"></div>
-                <div class="descriptor">Played</div>
+                <div class="descriptor">Spillet</div>
               </div>
               <div class="statistic">
                 <div id="win-percent" class="stat"></div>
-                <div class="descriptor">Win %</div>
+                <div class="descriptor">Vundet %</div>
               </div>
               <div class="statistic">
                 <div id="current-streak" class="stat"></div>
                 <div class="descriptor">
-                  <center>Current<br />Streak</center>
+                  <center>Nuværende<br />stime</center>
                 </div>
               </div>
               <div class="statistic">
                 <div id="max-streak" class="stat"></div>
                 <div class="descriptor">
-                  <center>Max<br />Streak</center>
+                  <center>Længste<br />stime</center>
                 </div>
               </div>
             </div>
-            <p>GUESS DISTRIBUTION</p>
+            <p>GÆTFORDELING</p>
             <div class="graph">
               <div class="graph-row">
                 <div class="graph-label">1</div>
@@ -313,15 +256,8 @@
       </main>
 
       <footer id="site-footer">
-        <div id="database-link">
-          <a
-            href="https://costcofdb.com/food-database"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Costco Food Database</a
-          >
-        </div>
-        <div id="dev-name">&copy;Kerm</div>
+        <div id="footer-tagline">Dagens prisgæt</div>
+        <div id="dev-name">&copy; HVADPRISEN?</div>
       </footer>
     </div>
   </body>

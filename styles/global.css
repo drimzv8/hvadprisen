@@ -1,3 +1,23 @@
+:root {
+  --bg: #faf9f6;
+  --surface: #ffffff;
+  --ink: #1b1b1b;
+  --muted: #6b6b6b;
+  --line: #e4e1db;
+  --field: #f1efea;
+
+  --red: #c8102e;
+  --red-dark: #a10c25;
+  --red-soft: #fbe8eb;
+
+  --win: #2f9e5b;
+  --near: #f2c14e;
+  --far: #ec7a70;
+
+  --radius: 10px;
+  --shadow: 0 4px 18px rgba(27, 27, 27, 0.08);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,10 +29,11 @@
 }
 
 body {
-  font-family: "VT323", monospace;
-  font-size: 30px;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
 
-  background-color: gainsboro;
+  color: var(--ink);
+  background-color: var(--bg);
 }
 
 body::-webkit-scrollbar {
@@ -20,11 +41,12 @@ body::-webkit-scrollbar {
 }
 
 a {
-  color: black;
+  color: var(--red);
 }
 
 h3 {
-  font-weight: normal;
+  font-size: 18px;
+  font-weight: 600;
 
   margin-bottom: 6px;
 }
@@ -46,12 +68,12 @@ img {
   user-select: none;
 }
 
-.costco-red {
-  color: rgb(227, 42, 54);
+.brand-ink {
+  color: var(--ink);
 }
 
-.costco-blue {
-  color: rgb(0, 96, 169);
+.brand-red {
+  color: var(--red);
 }
 
 .hide {
@@ -76,7 +98,7 @@ img {
   align-items: center;
   justify-content: center;
 
-  background-color: gainsboro;
+  background-color: var(--bg);
 }
 
 #header-container {
@@ -86,36 +108,44 @@ img {
 
   width: 344px;
 
-  border-bottom: 2px solid gray;
+  border-bottom: 3px solid var(--red);
 }
 
 .title {
-  font-size: 60px;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
 
 .info-title {
-  font-size: 52px;
+  font-size: 26px;
 }
 
 #info-button {
-  font-family: "VT323", monospace;
-  font-size: 55px;
+  font-family: inherit;
+  font-size: 30px;
+  font-weight: 600;
 
   width: 30px;
   height: 60px;
 
   cursor: pointer;
 
-  color: black;
+  color: var(--ink);
   border: none;
   background: none;
+}
+
+#info-button:hover {
+  color: var(--red);
 }
 
 #stat-button {
   font-size: 30px;
 
-  width: 30px;
+  width: 26px;
   height: 60px;
+  padding: 16px 0;
 
   cursor: pointer;
 
@@ -124,20 +154,25 @@ img {
 }
 
 #site-footer {
+  font-size: 14px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  border-top: 2px solid gray;
-  background-color: gainsboro;
+  padding: 10px 0;
+
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  background-color: var(--bg);
 }
 
-#database-link {
-  margin-left: 12px;
+#footer-tagline {
+  margin-left: 16px;
 }
 
 #dev-name {
-  margin-right: 12px;
+  margin-right: 16px;
 }
 
 ::-webkit-scrollbar {
@@ -149,11 +184,11 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #a8bbbf;
+  background-color: var(--red);
 }
 
 @media screen and (max-height: 900px) {
@@ -189,11 +224,11 @@ img {
   }
 
   #site-footer {
-    font-size: 24px;
+    font-size: 13px;
   }
 
   #game-stats {
-    font-size: 24px;
+    font-size: 16px;
   }
 }
 
@@ -218,7 +253,7 @@ img {
   }
 
   #product-info {
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 

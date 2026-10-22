@@ -2,7 +2,7 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "costcodle",
+      "name": "hvadprisen",
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "8000", "--directory", "C:/Users/andro/Desktop/costcodle"],
       "port": 8000

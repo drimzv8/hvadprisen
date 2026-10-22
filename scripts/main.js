@@ -16,9 +16,12 @@ let warningTimeout;
   Global variable constants
 */
 
-//The day Costcodle was launched. Used to find game number each day
-const costcodleStartDate = new Date("09/21/2023");
+//The day HVADPRISEN? was launched. Used to find game number each day
+const gameStartDate = new Date("10/22/2026");
 const gameNumber = getGameNumber();
+
+//Link included when sharing results
+const gameUrl = window.location.origin + window.location.pathname;
 
 //Elements with event listeners to play the game
 const input = document.getElementById("guess-input");
@@ -113,7 +116,7 @@ function convertToShareButton() {
   const shareButtonElem = document.createElement("button");
   shareButtonElem.setAttribute("id", "share-button");
   containerElem.innerHTML = "";
-  shareButtonElem.innerHTML = `Share
+  shareButtonElem.innerHTML = `Del
   <img src="./assets/share-icon.svg" class="share-icon" />`;
   shareButtonElem.addEventListener("click", copyStats);
   containerElem.appendChild(shareButtonElem);
@@ -145,16 +148,16 @@ function updateGameBoard() {
 function updateGuessStat() {
   const guessStats = document.getElementById("game-stats");
   if (gameState.hasWon) {
-    guessStats.innerHTML = `<center>You win! Congratulations!🎉</center>`;
-    guessStats.innerHTML += `<center>The price was ${productPrice.toFixed(2)} kr.</center>`;
+    guessStats.innerHTML = `<center>Du vandt! Tillykke! 🎉</center>`;
+    guessStats.innerHTML += `<center>Prisen var ${productPrice.toFixed(2)} kr.</center>`;
     return;
   }
 
   if (gameState.guesses.length === 6) {
-    guessStats.innerHTML = `<center>Better luck next time!</center>`;
-    guessStats.innerHTML += `<center>The price was ${productPrice.toFixed(2)} kr.</center>`;
+    guessStats.innerHTML = `<center>Bedre held næste gang!</center>`;
+    guessStats.innerHTML += `<center>Prisen var ${productPrice.toFixed(2)} kr.</center>`;
   } else {
-    guessStats.innerHTML = `Guess: ${gameState.guesses.length + 1}/6`;
+    guessStats.innerHTML = `Gæt: ${gameState.guesses.length + 1}/6`;
   }
 }
 
@@ -206,7 +209,7 @@ function handleInput() {
 }
 
 function copyStats() {
-  let output = `Costcodle #${gameNumber}`;
+  let output = `HVADPRISEN? #${gameNumber}`;
   if (!gameState.hasWon) {
     output += ` X/6\n`;
   } else {
@@ -252,14 +255,14 @@ function copyStats() {
     if (navigator.canShare) {
       navigator
         .share({
-          title: "COSTCODLE",
+          title: "HVADPRISEN?",
           text: output,
-          url: "https://costcodle.com",
+          url: gameUrl,
         })
         .catch((error) => console.error("Share failed:", error));
     }
   } else {
-    output += `https://costcodle.com`;
+    output += gameUrl;
     navigator.clipboard.writeText(output);
     displayToast();
   }
@@ -290,7 +293,7 @@ function addEventListeners() {
     input.setAttribute("placeholder", "0.00");
   });
   input.addEventListener("blur", () => {
-    input.setAttribute("placeholder", "Enter a guess...");
+    input.setAttribute("placeholder", "Indtast et gæt...");
   });
 }
 
@@ -298,13 +301,13 @@ function removeEventListeners() {
   buttonInput.setAttribute("disabled", "");
   buttonInput.classList.remove("active");
   input.setAttribute("disabled", "");
-  input.setAttribute("placeholder", "Game Over!");
+  input.setAttribute("placeholder", "Spillet er slut!");
   input.removeEventListener("keydown", inputEventListener);
   buttonInput.removeEventListener("click", buttonEventListener);
 }
 
 /*
-  Handles the logic of Costocodle
+  Handles the logic of HVADPRISEN?
   Creates a guess object based on user guess and checks win condition
 */
 
@@ -427,7 +430,7 @@ function switchState(event) {
   }
 
   if (overlayElem.style.display === "flex") {
-    title.innerHTML = `COSTCO<span class="costco-blue">DLE</span>`;
+    title.innerHTML = `<center>HVAD<span class="brand-red">PRISEN?</span></center>`;
     overlayElem.style.display = "none";
     return;
   }
@@ -441,7 +444,7 @@ function switchState(event) {
   }
 
   function renderInfo() {
-    title.innerHTML = `HOW TO <span class="costco-blue">PLAY</span>`;
+    title.innerHTML = `SÅDAN <span class="brand-red">SPILLES</span>`;
     if (!title.classList.contains("info-title")) {
       title.classList.add("info-title");
     }
@@ -449,7 +452,7 @@ function switchState(event) {
   }
 
   function renderStats() {
-    title.innerHTML = `GAME <span class="costco-blue">STATS</span>`;
+    title.innerHTML = `DIN <span class="brand-red">STATISTIK</span>`;
 
     renderStatistics();
     graphDistribution();
@@ -477,7 +480,6 @@ function switchState(event) {
     }
 
     function graphDistribution() {
-      console.log("here");
       userStats.winsInNum.forEach((value, index) => {
         const graphElem = document.getElementById(`graph-${index + 1}`);
         if (userStats.numWins === 0) {
@@ -506,14 +508,14 @@ function shakeBox() {
 }
 
 /*
-  Finds current game number based off of Costcodle start date
+  Finds current game number based off of the game start date
 */
 
 function getGameNumber() {
   const currDate = new Date();
-  let timeDifference = currDate.getTime() - costcodleStartDate.getTime();
+  let timeDifference = currDate.getTime() - gameStartDate.getTime();
   let dayDifference = timeDifference / (1000 * 3600 * 24);
 
-  return Math.ceil(dayDifference) + 1;
+  return Math.floor(dayDifference) + 1;
 }
 
