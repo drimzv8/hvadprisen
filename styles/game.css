@@ -61,6 +61,28 @@
   color: var(--muted);
 }
 
+#hint-button {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+
+  padding: 0;
+
+  cursor: pointer;
+
+  color: var(--red);
+  border: none;
+  background: none;
+}
+
+#hint-button:hover {
+  text-decoration: underline;
+}
+
+#game-stats strong {
+  color: var(--ink);
+}
+
 #guesses-container {
   display: flex;
   flex-direction: column;

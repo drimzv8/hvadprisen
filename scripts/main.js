@@ -6,6 +6,7 @@
 let productName;
 let productPrice;
 let productImage;
+let productStore;
 
 //Timeout IDs
 let shakeTimeout;
@@ -57,6 +58,13 @@ document
   .getElementById("archive-more")
   .addEventListener("click", renderArchiveEntries);
 
+//The "Vis butik" hint button is re-rendered with the guess count, so listen on its container
+document.getElementById("game-stats").addEventListener("click", (event) => {
+  if (event.target.closest("#hint-button")) {
+    useStoreHint();
+  }
+});
+
 //User stats object
 const userStats = JSON.parse(localStorage.getItem("stats")) || {
   numGames: 0,
@@ -71,6 +79,7 @@ const dailyState = JSON.parse(localStorage.getItem("state")) || {
   gameNumber: -1,
   guesses: [],
   hasWon: false,
+  usedHint: false,
 };
 
 //Results of every game played, keyed by game number
@@ -90,6 +99,7 @@ const gameState = isArchiveGame
       gameNumber: playedGameNumber,
       guesses: results[playedGameNumber]?.guesses || [],
       hasWon: results[playedGameNumber]?.hasWon || false,
+      usedHint: results[playedGameNumber]?.usedHint || false,
     }
   : dailyState;
 
@@ -116,6 +126,8 @@ function fetchGameData(gameNumber) {
     //Prices are stored like "24.95 kr."
     productPrice = parseFloat(game.price);
     productImage = game.image;
+    //Optional: games without a store don't offer the hint
+    productStore = game.store;
 
     initializeGame();
   });
@@ -132,6 +144,7 @@ function saveGameState() {
   results[gameState.gameNumber] = {
     guesses: gameState.guesses,
     hasWon: gameState.hasWon,
+    usedHint: gameState.usedHint || false,
   };
   localStorage.setItem("results", JSON.stringify(results));
 
@@ -153,6 +166,7 @@ function initializeGame() {
     gameState.gameNumber = gameNumber;
     gameState.guesses = [];
     gameState.hasWon = false;
+    gameState.usedHint = false;
     userStats.numGames++;
 
     localStorage.setItem("stats", JSON.stringify(userStats));
@@ -210,18 +224,41 @@ function updateGameBoard() {
 
 function updateGuessStat() {
   const guessStats = document.getElementById("game-stats");
+  //The store is revealed with the price once the game is over
+  const priceLine = `<center>Prisen var ${productPrice.toFixed(2)} kr.${
+    productStore ? ` hos ${productStore}` : ""
+  }</center>`;
+
   if (gameState.hasWon) {
     guessStats.innerHTML = `<center>Du vandt! Tillykke! 🎉</center>`;
-    guessStats.innerHTML += `<center>Prisen var ${productPrice.toFixed(2)} kr.</center>`;
+    guessStats.innerHTML += priceLine;
     return;
   }
 
   if (gameState.guesses.length === 6) {
     guessStats.innerHTML = `<center>Bedre held næste gang!</center>`;
-    guessStats.innerHTML += `<center>Prisen var ${productPrice.toFixed(2)} kr.</center>`;
+    guessStats.innerHTML += priceLine;
   } else {
-    guessStats.innerHTML = `Gæt: ${gameState.guesses.length + 1}/6`;
+    guessStats.innerHTML = `Gæt: ${gameState.guesses.length + 1}/6${storeHint()}`;
   }
+
+  //Shows the hint button, or the store once the hint is used
+  function storeHint() {
+    if (!productStore) {
+      return "";
+    }
+    if (gameState.usedHint) {
+      return ` · Butik: <strong>${productStore}</strong>`;
+    }
+    return ` · <button id="hint-button" type="button">💡 Vis butik</button>`;
+  }
+}
+
+//Free hint: reveals the store and marks the game with 💡
+function useStoreHint() {
+  gameState.usedHint = true;
+  saveGameState();
+  updateGuessStat();
 }
 
 /*
@@ -274,10 +311,12 @@ function handleInput() {
 function copyStats() {
   let output = `HVADPRISEN? #${playedGameNumber}`;
   if (!gameState.hasWon) {
-    output += ` X/6\n`;
+    output += ` X/6`;
   } else {
-    output += ` ${gameState.guesses.length}/6\n`;
+    output += ` ${gameState.guesses.length}/6`;
   }
+  //Shows friends that the store hint was used
+  output += gameState.usedHint ? ` 💡\n` : `\n`;
 
   gameState.guesses.forEach((guess) => {
     switch (guess.direction) {
@@ -620,13 +659,14 @@ function createArchiveEntry(number) {
   }
   entryElem.href = getGameLink(number);
 
+  const hint = result?.usedHint ? " 💡" : "";
   let status = `<span class="archive-status">Ikke spillet</span>`;
   if (result?.hasWon) {
-    status = `<span class="archive-status status-won">Vundet ${result.guesses.length}/6</span>`;
+    status = `<span class="archive-status status-won">Vundet ${result.guesses.length}/6${hint}</span>`;
   } else if (result?.guesses.length === 6) {
-    status = `<span class="archive-status status-lost">Tabt</span>`;
+    status = `<span class="archive-status status-lost">Tabt${hint}</span>`;
   } else if (result?.guesses.length > 0) {
-    status = `<span class="archive-status">I gang ${result.guesses.length}/6</span>`;
+    status = `<span class="archive-status">I gang ${result.guesses.length}/6${hint}</span>`;
   }
 
   const dateLabel =
