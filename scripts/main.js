@@ -35,7 +35,8 @@ const gameUrl = window.location.origin + window.location.pathname;
 
 //Game data from games.json, loaded once and reused by the archive
 let gamesData;
-const gamesPromise = fetch("./games.json")
+//"no-cache" checks for a newer file on every load, so product edits show up right away
+const gamesPromise = fetch("./games.json", { cache: "no-cache" })
   .then((response) => response.json())
   .then((json) => (gamesData = json));
 
