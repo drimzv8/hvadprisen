@@ -31,45 +31,59 @@
   },
   "game-6": {
     "date": "2026-10-27",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Nutella, 200 g",
+    "price": "25.00 kr.",
+    "image": "./assets/products/nutella.jpg",
+    "store": "Netto",
+    "source": "Netto avis 24.–30. okt. 2026, side 2"
   },
   "game-7": {
     "date": "2026-10-28",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Mutti tomater, 400 g",
+    "price": "9.97 kr.",
+    "image": "./assets/products/mutti.jpg",
+    "store": "Netto",
+    "source": "Netto avis 24.–30. okt. 2026, side 8"
   },
   "game-8": {
     "date": "2026-10-29",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "ØGO økologisk feta, 150 g",
+    "price": "20.00 kr.",
+    "image": "./assets/products/oego-feta.jpg",
+    "store": "Netto",
+    "source": "Netto avis 24.–30. okt. 2026, side 9"
   },
   "game-9": {
     "date": "2026-10-30",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Cheasy yoghurt, 1 L",
+    "price": "12.00 kr.",
+    "image": "./assets/products/cheasy.jpg",
+    "store": "Netto",
+    "source": "Netto avis 24.–30. okt. 2026, side 2"
   },
   "game-10": {
     "date": "2026-10-31",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "BKI formalet kaffe, 350–400 g",
+    "price": "35.00 kr.",
+    "image": "./assets/products/bki.jpg",
+    "store": "Netto",
+    "source": "Netto avis 24.–30. okt. 2026, side 1"
   },
   "game-11": {
     "date": "2026-11-01",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Mentos, 37,5–38 g",
+    "price": "5.00 kr.",
+    "image": "./assets/products/mentos.jpg",
+    "store": "Netto",
+    "source": "Netto avis 24.–30. okt. 2026, side 3"
   },
   "game-12": {
     "date": "2026-11-02",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "ØGO økologisk hokkaido græskar, pr. stk.",
+    "price": "15.00 kr.",
+    "image": "./assets/products/hokkaido.jpg",
+    "store": "Netto",
+    "source": "Netto avis 24.–30. okt. 2026, side 9"
   },
   "game-13": {
     "date": "2026-11-03",
