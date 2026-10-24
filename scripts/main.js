@@ -378,7 +378,10 @@ function checkGuess(guess) {
 
   const percentAway = calculatePercent(guess);
 
-  if (Math.abs(percentAway) <= 5) {
+  //A guess wins within 50 øre of the price. Compared in øre to avoid rounding errors
+  const oreAway = Math.round(guess * 100) - Math.round(productPrice * 100);
+
+  if (Math.abs(oreAway) <= 50) {
     guessObj.closeness = "guess-win";
     gameState.hasWon = true;
   } else {

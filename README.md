@@ -4,7 +4,7 @@ Et dagligt prisgæt: gæt prisen på dagens danske dagligvare på 6 forsøg.
 
 - Hvert gæt skal være en gyldig pris i kroner.
 - Forkerte gæt viser dig vejen mod den rigtige pris (↑ / ↓, gul = inden for 25 %).
-- Rammer du inden for 5 % af prisen, har du vundet!
+- Rammer du inden for 50 øre af prisen, har du vundet!
 
 Der er en ny vare hver dag.
 
