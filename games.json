@@ -1,27 +1,602 @@
 {
   "game-1": {
+    "date": "2026-10-22",
     "name": "Lurpak Smør, 200 g",
     "price": "15.00 kr.",
     "image": "./assets/products/lurpak.png"
   },
   "game-2": {
+    "date": "2026-10-23",
     "name": "Sodavand, 2 L (Faxe Kondi / Pepsi Max)",
     "price": "16.00 kr.",
     "image": "./assets/products/sodavand.png"
   },
   "game-3": {
+    "date": "2026-10-24",
     "name": "Nørregade julekalender, 1 KG",
     "price": "299.00 kr.",
     "image": "./assets/products/Norregadejul.png"
   },
   "game-4": {
+    "date": "2026-10-25",
     "name": "Stryhns Leverpostej, 400 g",
     "price": "26.95 kr.",
     "image": "./assets/products/leverpostej.svg"
   },
   "game-5": {
+    "date": "2026-10-26",
     "name": "Kelsen Danish Butter Cookies, 908 g",
     "price": "79.95 kr.",
     "image": "./assets/products/kelsen.svg"
+  },
+  "game-6": {
+    "date": "2026-10-27",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-7": {
+    "date": "2026-10-28",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-8": {
+    "date": "2026-10-29",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-9": {
+    "date": "2026-10-30",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-10": {
+    "date": "2026-10-31",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-11": {
+    "date": "2026-11-01",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-12": {
+    "date": "2026-11-02",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-13": {
+    "date": "2026-11-03",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-14": {
+    "date": "2026-11-04",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-15": {
+    "date": "2026-11-05",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-16": {
+    "date": "2026-11-06",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-17": {
+    "date": "2026-11-07",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-18": {
+    "date": "2026-11-08",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-19": {
+    "date": "2026-11-09",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-20": {
+    "date": "2026-11-10",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-21": {
+    "date": "2026-11-11",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-22": {
+    "date": "2026-11-12",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-23": {
+    "date": "2026-11-13",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-24": {
+    "date": "2026-11-14",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-25": {
+    "date": "2026-11-15",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-26": {
+    "date": "2026-11-16",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-27": {
+    "date": "2026-11-17",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-28": {
+    "date": "2026-11-18",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-29": {
+    "date": "2026-11-19",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-30": {
+    "date": "2026-11-20",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-31": {
+    "date": "2026-11-21",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-32": {
+    "date": "2026-11-22",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-33": {
+    "date": "2026-11-23",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-34": {
+    "date": "2026-11-24",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-35": {
+    "date": "2026-11-25",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-36": {
+    "date": "2026-11-26",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-37": {
+    "date": "2026-11-27",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-38": {
+    "date": "2026-11-28",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-39": {
+    "date": "2026-11-29",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-40": {
+    "date": "2026-11-30",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-41": {
+    "date": "2026-12-01",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-42": {
+    "date": "2026-12-02",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-43": {
+    "date": "2026-12-03",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-44": {
+    "date": "2026-12-04",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-45": {
+    "date": "2026-12-05",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-46": {
+    "date": "2026-12-06",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-47": {
+    "date": "2026-12-07",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-48": {
+    "date": "2026-12-08",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-49": {
+    "date": "2026-12-09",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-50": {
+    "date": "2026-12-10",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-51": {
+    "date": "2026-12-11",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-52": {
+    "date": "2026-12-12",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-53": {
+    "date": "2026-12-13",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-54": {
+    "date": "2026-12-14",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-55": {
+    "date": "2026-12-15",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-56": {
+    "date": "2026-12-16",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-57": {
+    "date": "2026-12-17",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-58": {
+    "date": "2026-12-18",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-59": {
+    "date": "2026-12-19",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-60": {
+    "date": "2026-12-20",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-61": {
+    "date": "2026-12-21",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-62": {
+    "date": "2026-12-22",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-63": {
+    "date": "2026-12-23",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-64": {
+    "date": "2026-12-24",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-65": {
+    "date": "2026-12-25",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-66": {
+    "date": "2026-12-26",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-67": {
+    "date": "2026-12-27",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-68": {
+    "date": "2026-12-28",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-69": {
+    "date": "2026-12-29",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-70": {
+    "date": "2026-12-30",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-71": {
+    "date": "2026-12-31",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-72": {
+    "date": "2027-01-01",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-73": {
+    "date": "2027-01-02",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-74": {
+    "date": "2027-01-03",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-75": {
+    "date": "2027-01-04",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-76": {
+    "date": "2027-01-05",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-77": {
+    "date": "2027-01-06",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-78": {
+    "date": "2027-01-07",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-79": {
+    "date": "2027-01-08",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-80": {
+    "date": "2027-01-09",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-81": {
+    "date": "2027-01-10",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-82": {
+    "date": "2027-01-11",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-83": {
+    "date": "2027-01-12",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-84": {
+    "date": "2027-01-13",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-85": {
+    "date": "2027-01-14",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-86": {
+    "date": "2027-01-15",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-87": {
+    "date": "2027-01-16",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-88": {
+    "date": "2027-01-17",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-89": {
+    "date": "2027-01-18",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-90": {
+    "date": "2027-01-19",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-91": {
+    "date": "2027-01-20",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-92": {
+    "date": "2027-01-21",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-93": {
+    "date": "2027-01-22",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-94": {
+    "date": "2027-01-23",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-95": {
+    "date": "2027-01-24",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-96": {
+    "date": "2027-01-25",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-97": {
+    "date": "2027-01-26",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-98": {
+    "date": "2027-01-27",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-99": {
+    "date": "2027-01-28",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
+  },
+  "game-100": {
+    "date": "2027-01-29",
+    "name": "Placeholder",
+    "price": "10.00 kr.",
+    "image": "./assets/products/placeholder.svg"
   }
 }
