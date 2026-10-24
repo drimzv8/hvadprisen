@@ -1,13 +1,13 @@
 {
   "game-1": {
     "name": "Lurpak Smør, 200 g",
-    "price": "24.95 kr.",
-    "image": "./assets/products/lurpak.svg"
+    "price": "15.00 kr.",
+    "image": "./assets/products/lurpak.png"
   },
   "game-2": {
-    "name": "Faxe Kondi, 1,5 L",
-    "price": "22.00 kr.",
-    "image": "./assets/products/faxe-kondi.svg"
+    "name": "Sodavand, 2 L (Faxe Kondi / Pepsi Max)",
+    "price": "16.00 kr.",
+    "image": "./assets/products/sodavand.png"
   },
   "game-3": {
     "name": "Kanelgifler, 8 stk",
