@@ -267,3 +267,26 @@
   border-radius: var(--radius);
   background-color: var(--ink);
 }
+
+#archive-banner {
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+
+  width: 324px;
+  margin-top: 14px;
+  padding: 6px 12px;
+
+  color: var(--red-dark);
+  border: 1px solid var(--red);
+  border-radius: var(--radius);
+  background-color: var(--red-soft);
+}
+
+#archive-banner a {
+  font-weight: 600;
+}
+
+#archive-banner:not(.hide) + #info-card {
+  margin-top: 12px;
+}

@@ -106,13 +106,13 @@ img {
   align-items: center;
   justify-content: space-between;
 
-  width: 344px;
+  width: 356px;
 
   border-bottom: 3px solid var(--red);
 }
 
 .title {
-  font-size: 34px;
+  font-size: 31px;
   font-weight: 800;
   letter-spacing: -0.5px;
 }
@@ -126,12 +126,33 @@ img {
   font-size: 30px;
   font-weight: 600;
 
-  width: 30px;
+  width: 58px;
   height: 60px;
 
   cursor: pointer;
+  text-align: left;
 
   color: var(--ink);
+  border: none;
+  background: none;
+}
+
+#header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+
+  width: 58px;
+}
+
+#archive-button {
+  width: 24px;
+  height: 60px;
+  padding: 17px 0;
+
+  cursor: pointer;
+
   border: none;
   background: none;
 }

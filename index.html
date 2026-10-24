@@ -79,18 +79,32 @@
           <h1 id="title" class="title brand-ink">
             <center>HVAD<span class="brand-red">PRISEN?</span></center>
           </h1>
-          <button
-            id="stat-button"
-            data-overlay="stats-overlay"
-            type="button"
-            aria-label="Statistik"
-          >
-            <img
-              src="./assets/stat-logo.svg"
-              alt=""
-              style="height: 100%; width: 100%"
-            />
-          </button>
+          <div id="header-actions">
+            <button
+              id="archive-button"
+              data-overlay="archive-overlay"
+              type="button"
+              aria-label="Arkiv"
+            >
+              <img
+                src="./assets/archive-logo.svg"
+                alt=""
+                style="height: 100%; width: 100%"
+              />
+            </button>
+            <button
+              id="stat-button"
+              data-overlay="stats-overlay"
+              type="button"
+              aria-label="Statistik"
+            >
+              <img
+                src="./assets/stat-logo.svg"
+                alt=""
+                style="height: 100%; width: 100%"
+              />
+            </button>
+          </div>
         </div>
       </header>
 
@@ -98,6 +112,7 @@
         <div id="share-toast" class="animate__animated hide">
           <center>Resultat kopieret til udklipsholderen</center>
         </div>
+        <div id="archive-banner" class="hide"></div>
         <div id="info-card" class="animate__animated">
           <div id="image-container"></div>
           <div id="product-info"></div>
@@ -197,6 +212,18 @@
             <div class="info-section">
               <p>Tak fordi du spiller med. Vi ses i morgen!</p>
             </div>
+          </div>
+        </div>
+        <div id="archive-overlay" class="overlay" style="display: none">
+          <div id="archive-body" class="overlay-body">
+            <p id="archive-intro">
+              Spil tidligere dage. Arkivspil tæller ikke med i din
+              statistik.
+            </p>
+            <div id="archive-list"></div>
+            <button id="archive-more" class="hide" type="button">
+              Vis flere
+            </button>
           </div>
         </div>
         <div id="stats-overlay" class="overlay" style="display: none">

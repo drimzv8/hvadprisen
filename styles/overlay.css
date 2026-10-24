@@ -123,3 +123,119 @@
   height: 24px;
   margin-bottom: 12px;
 }
+
+#archive-body {
+  display: flex;
+  flex-direction: column;
+}
+
+#archive-intro {
+  font-size: 14px;
+
+  margin: 8px 0 12px;
+
+  color: var(--muted);
+}
+
+.archive-entry {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 10px;
+
+  margin-bottom: 8px;
+  padding: 8px;
+
+  text-decoration: none;
+
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+}
+
+.archive-entry:hover {
+  border-color: var(--red);
+}
+
+.archive-current {
+  border-color: var(--red);
+  box-shadow: inset 3px 0 0 var(--red);
+}
+
+.archive-image {
+  flex-shrink: 0;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+.archive-details {
+  overflow: hidden;
+  flex: 1;
+}
+
+.archive-title {
+  font-size: 13px;
+
+  color: var(--muted);
+}
+
+.archive-name {
+  font-size: 15px;
+  font-weight: 600;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.archive-status {
+  font-size: 12px;
+  font-weight: 600;
+
+  flex-shrink: 0;
+
+  padding: 4px 8px;
+
+  color: var(--muted);
+  border-radius: 20px;
+  background-color: var(--field);
+}
+
+.archive-status.status-won {
+  color: white;
+  background-color: var(--win);
+}
+
+.archive-status.status-lost {
+  color: white;
+  background-color: var(--far);
+}
+
+#archive-more {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+
+  flex-shrink: 0;
+
+  margin: 4px 0 16px;
+  padding: 10px;
+
+  cursor: pointer;
+
+  color: var(--red);
+  border: 1.5px solid var(--red);
+  border-radius: 32px;
+  background-color: transparent;
+}
+
+#archive-more:hover {
+  color: white;
+  background-color: var(--red);
+}

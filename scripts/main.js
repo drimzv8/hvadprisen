@@ -12,6 +12,9 @@ let shakeTimeout;
 let toastTimeout;
 let warningTimeout;
 
+//Number of archive entries currently listed
+let archiveShown = 0;
+
 /*
   Global variable constants
 */
@@ -20,8 +23,21 @@ let warningTimeout;
 const gameStartDate = new Date("10/22/2026");
 const gameNumber = getGameNumber();
 
+//Game being played: today's, or a past one picked from the archive (?spil=N)
+const playedGameNumber = getPlayedGameNumber();
+const isArchiveGame = playedGameNumber !== gameNumber;
+
+//Archive entries listed per "Vis flere" click
+const archivePageSize = 30;
+
 //Link included when sharing results
 const gameUrl = window.location.origin + window.location.pathname;
+
+//Game data from games.json, loaded once and reused by the archive
+let gamesData;
+const gamesPromise = fetch("./games.json")
+  .then((response) => response.json())
+  .then((json) => (gamesData = json));
 
 //Elements with event listeners to play the game
 const input = document.getElementById("guess-input");
@@ -33,6 +49,13 @@ infoButton.addEventListener("click", switchState);
 const statButton = document.getElementById("stat-button");
 statButton.addEventListener("click", switchState);
 
+const archiveButton = document.getElementById("archive-button");
+archiveButton.addEventListener("click", switchState);
+
+document
+  .getElementById("archive-more")
+  .addEventListener("click", renderArchiveEntries);
+
 //User stats object
 const userStats = JSON.parse(localStorage.getItem("stats")) || {
   numGames: 0,
@@ -42,12 +65,32 @@ const userStats = JSON.parse(localStorage.getItem("stats")) || {
   maxStreak: 0,
 };
 
-//User game state
-const gameState = JSON.parse(localStorage.getItem("state")) || {
+//Daily game state, used for streaks and stats
+const dailyState = JSON.parse(localStorage.getItem("state")) || {
   gameNumber: -1,
   guesses: [],
   hasWon: false,
 };
+
+//Results of every game played, keyed by game number
+const results = JSON.parse(localStorage.getItem("results")) || {};
+
+//Keep the last daily game in the archive results if it was played before results existed
+if (dailyState.gameNumber > 0 && !results[dailyState.gameNumber]) {
+  results[dailyState.gameNumber] = {
+    guesses: dailyState.guesses,
+    hasWon: dailyState.hasWon,
+  };
+}
+
+//State of the game being played. Archive games never touch the daily state
+const gameState = isArchiveGame
+  ? {
+      gameNumber: playedGameNumber,
+      guesses: results[playedGameNumber]?.guesses || [],
+      hasWon: results[playedGameNumber]?.hasWon || false,
+    }
+  : dailyState;
 
 /*
   Starts playing the game. Called at beginning of execution
@@ -56,29 +99,44 @@ const gameState = JSON.parse(localStorage.getItem("state")) || {
 playGame();
 
 function playGame() {
-  fetchGameData(getGameNumber());
+  fetchGameData(playedGameNumber);
 }
 
 /*
   Acquiring Game Data
 */
 
-//Fetches the current day's game data from the json and starts game
+//Fetches the chosen game's data from the json and starts game
 function fetchGameData(gameNumber) {
-  fetch("./games.json")
-    .then((response) => response.json())
-    .then((json) => {
-      //Cycle through the product list so a short list never runs out
-      const gameCount = Object.keys(json).length;
-      const game = json[`game-${((gameNumber - 1) % gameCount) + 1}`];
+  gamesPromise.then(() => {
+    const game = getGame(gameNumber);
 
-      productName = game.name;
-      //Prices are stored like "24.95 kr."
-      productPrice = parseFloat(game.price);
-      productImage = game.image;
+    productName = game.name;
+    //Prices are stored like "24.95 kr."
+    productPrice = parseFloat(game.price);
+    productImage = game.image;
 
-      initializeGame();
-    });
+    initializeGame();
+  });
+}
+
+//Cycle through the product list so a short list never runs out
+function getGame(gameNumber) {
+  const gameCount = Object.keys(gamesData).length;
+  return gamesData[`game-${((gameNumber - 1) % gameCount) + 1}`];
+}
+
+//Saves the current game's result, plus the daily state when playing today's game
+function saveGameState() {
+  results[gameState.gameNumber] = {
+    guesses: gameState.guesses,
+    hasWon: gameState.hasWon,
+  };
+  localStorage.setItem("results", JSON.stringify(results));
+
+  if (!isArchiveGame) {
+    localStorage.setItem("state", JSON.stringify(gameState));
+  }
 }
 
 /*
@@ -87,7 +145,7 @@ function fetchGameData(gameNumber) {
 
 function initializeGame() {
   //Reset game state and track new game if user last played on a previous day
-  if (gameState.gameNumber !== gameNumber) {
+  if (!isArchiveGame && gameState.gameNumber !== gameNumber) {
     if (gameState.hasWon === false) {
       userStats.currentStreak = 0;
     }
@@ -98,6 +156,10 @@ function initializeGame() {
 
     localStorage.setItem("stats", JSON.stringify(userStats));
     localStorage.setItem("state", JSON.stringify(gameState));
+  }
+
+  if (isArchiveGame) {
+    displayArchiveBanner();
   }
 
   displayProductCard();
@@ -209,7 +271,7 @@ function handleInput() {
 }
 
 function copyStats() {
-  let output = `HVADPRISEN? #${gameNumber}`;
+  let output = `HVADPRISEN? #${playedGameNumber}`;
   if (!gameState.hasWon) {
     output += ` X/6\n`;
   } else {
@@ -257,12 +319,12 @@ function copyStats() {
         .share({
           title: "HVADPRISEN?",
           text: output,
-          url: gameUrl,
+          url: getGameLink(playedGameNumber),
         })
         .catch((error) => console.error("Share failed:", error));
     }
   } else {
-    output += gameUrl;
+    output += getGameLink(playedGameNumber);
     navigator.clipboard.writeText(output);
     displayToast();
   }
@@ -337,7 +399,7 @@ function checkGuess(guess) {
   }
 
   gameState.guesses.push(guessObj);
-  localStorage.setItem("state", JSON.stringify(gameState));
+  saveGameState();
 
   displayGuess(guessObj);
 
@@ -393,24 +455,29 @@ function calculatePercent(guess) {
 */
 
 function gameWon() {
-  userStats.numWins++;
-  userStats.currentStreak++;
-  userStats.winsInNum[gameState.guesses.length - 1]++;
-  if (userStats.currentStreak > userStats.maxStreak) {
-    userStats.maxStreak = userStats.currentStreak;
-  }
   gameState.hasWon = true;
+  saveGameState();
 
-  localStorage.setItem("state", JSON.stringify(gameState));
-  localStorage.setItem("stats", JSON.stringify(userStats));
+  //Archive games don't count toward streaks or stats
+  if (!isArchiveGame) {
+    userStats.numWins++;
+    userStats.currentStreak++;
+    userStats.winsInNum[gameState.guesses.length - 1]++;
+    if (userStats.currentStreak > userStats.maxStreak) {
+      userStats.maxStreak = userStats.currentStreak;
+    }
+    localStorage.setItem("stats", JSON.stringify(userStats));
+  }
+
   removeEventListeners();
   convertToShareButton();
 }
 
 function gameLost() {
-  userStats.currentStreak = 0;
-
-  localStorage.setItem("stats", JSON.stringify(userStats));
+  if (!isArchiveGame) {
+    userStats.currentStreak = 0;
+    localStorage.setItem("stats", JSON.stringify(userStats));
+  }
 
   removeEventListeners();
   convertToShareButton();
@@ -435,12 +502,26 @@ function switchState(event) {
     return;
   }
 
+  document
+    .querySelectorAll(".overlay")
+    .forEach((overlay) => (overlay.style.display = "none"));
+
   if (overlayBtnClicked === "info-overlay") {
-    document.getElementById("stats-overlay").style.display = "none";
     renderInfo();
+  } else if (overlayBtnClicked === "archive-overlay") {
+    renderArchive();
   } else {
-    document.getElementById("info-overlay").style.display = "none";
     renderStats();
+  }
+
+  function renderArchive() {
+    title.innerHTML = `SPIL<span class="brand-red">ARKIV</span>`;
+    overlayElem.style.display = "flex";
+
+    //Rebuild the list each time so results from this session are current
+    document.getElementById("archive-list").innerHTML = "";
+    archiveShown = 0;
+    gamesPromise.then(renderArchiveEntries);
   }
 
   function renderInfo() {
@@ -505,6 +586,95 @@ function shakeBox() {
     () => infoCard.classList.add("animate__headShake"),
     100
   );
+}
+
+/*
+  Archive: lists past games newest first, archivePageSize at a time
+*/
+
+function renderArchiveEntries() {
+  const listElem = document.getElementById("archive-list");
+  const moreButton = document.getElementById("archive-more");
+  const last = Math.max(gameNumber - archiveShown - archivePageSize, 0);
+
+  for (let number = gameNumber - archiveShown; number > last; number--) {
+    listElem.appendChild(createArchiveEntry(number));
+  }
+  archiveShown = gameNumber - last;
+
+  moreButton.classList.toggle("hide", last === 0);
+}
+
+function createArchiveEntry(number) {
+  const game = getGame(number);
+  const result = results[number];
+
+  const entryElem = document.createElement("a");
+  entryElem.classList.add("archive-entry");
+  if (number === playedGameNumber) {
+    entryElem.classList.add("archive-current");
+  }
+  entryElem.href = getGameLink(number);
+
+  let status = `<span class="archive-status">Ikke spillet</span>`;
+  if (result?.hasWon) {
+    status = `<span class="archive-status status-won">Vundet ${result.guesses.length}/6</span>`;
+  } else if (result?.guesses.length === 6) {
+    status = `<span class="archive-status status-lost">Tabt</span>`;
+  } else if (result?.guesses.length > 0) {
+    status = `<span class="archive-status">I gang ${result.guesses.length}/6</span>`;
+  }
+
+  const dateLabel =
+    number === gameNumber ? "I dag" : formatGameDate(getGameDate(number));
+
+  entryElem.innerHTML = `
+    <img src="${game.image}" class="archive-image" loading="lazy" alt="" />
+    <div class="archive-details">
+      <div class="archive-title">#${number} · ${dateLabel}</div>
+      <div class="archive-name">${game.name}</div>
+    </div>
+    ${status}`;
+
+  return entryElem;
+}
+
+function displayArchiveBanner() {
+  const bannerElem = document.getElementById("archive-banner");
+  bannerElem.innerHTML = `Arkivspil #${playedGameNumber} · ${formatGameDate(
+    getGameDate(playedGameNumber)
+  )} · <a href="${getGameLink(gameNumber)}">Til dagens spil</a>`;
+  bannerElem.title = "Arkivspil tæller ikke med i din statistik";
+  bannerElem.classList.remove("hide");
+}
+
+//Link to a game: today's game is the plain page, past games use ?spil=N
+function getGameLink(number) {
+  return number === gameNumber ? gameUrl : `${gameUrl}?spil=${number}`;
+}
+
+function getGameDate(number) {
+  const date = new Date(gameStartDate);
+  date.setDate(date.getDate() + number - 1);
+  return date;
+}
+
+function formatGameDate(date) {
+  return date.toLocaleDateString("da-DK", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+}
+
+//Reads ?spil=N from the URL. Anything other than a past game number means today's game
+function getPlayedGameNumber() {
+  const requested = Number(new URLSearchParams(location.search).get("spil"));
+
+  if (Number.isInteger(requested) && requested >= 1 && requested < gameNumber) {
+    return requested;
+  }
+  return gameNumber;
 }
 
 /*
