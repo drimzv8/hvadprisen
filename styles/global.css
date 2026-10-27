@@ -102,11 +102,12 @@ img {
 }
 
 #header-container {
-  display: flex;
+  /* Equal outer columns keep the title centered on the red line, whatever the icon widths */
+  display: grid;
   align-items: center;
-  justify-content: space-between;
+  grid-template-columns: 1fr auto 1fr;
 
-  width: 356px;
+  width: 372px;
   /* Shrinks on very narrow phones instead of scrolling sideways */
   max-width: calc(100vw - 16px);
 
@@ -128,6 +129,8 @@ img {
   font-size: 30px;
   font-weight: 600;
 
+  justify-self: start;
+
   width: 24px;
   height: 60px;
   padding: 0;
@@ -144,6 +147,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  justify-self: end;
   gap: 8px;
 }
 
@@ -215,7 +219,7 @@ img {
 
 @media screen and (max-width: 360px) {
   .title {
-    font-size: 26px;
+    font-size: 23px;
   }
 }
 
