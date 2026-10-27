@@ -55,13 +55,8 @@
       rel="stylesheet"
     />
 
-    <script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"
-      defer
-    ></script>
-
     <script src="scripts/main.js" defer></script>
-    <script src="scripts/searchBar.js" defer></script>
+    <script src="scripts/priceInput.js" defer></script>
   </head>
 
   <body>
@@ -138,7 +133,7 @@
                 id="guess-input"
                 type="text"
                 inputmode="decimal"
-                pattern="^\d{1,3}(,\d{3})*(\.\d+)?$"
+                pattern="^\d+(,\d{1,2})?$"
                 data-type="currency"
                 placeholder="Indtast et gæt..."
               />
@@ -172,7 +167,7 @@
             <div class="info-section">
               <h3>Eksempler</h3>
               <div class="guess-container transparent-background">
-                <div class="guess-value-container animate__flipInX">10.00 kr.</div>
+                <div class="guess-value-container animate__flipInX">10,00 kr.</div>
                 <div
                   class="guess-direction-container animate__flipInX guess-far"
                 >
@@ -180,11 +175,11 @@
                 </div>
               </div>
               <p>
-                Første gæt på 10.00 kr. er mere end 25% under den rigtige pris.
+                Første gæt på 10,00 kr. er mere end 25% under den rigtige pris.
               </p>
               <br />
               <div class="guess-container transparent-background">
-                <div class="guess-value-container animate__flipInX">18.00 kr.</div>
+                <div class="guess-value-container animate__flipInX">18,00 kr.</div>
                 <div
                   class="guess-direction-container animate__flipInX guess-near"
                 >
@@ -192,12 +187,12 @@
                 </div>
               </div>
               <p>
-                Næste gæt på 18.00 kr. er for højt, men inden for 25% af den
+                Næste gæt på 18,00 kr. er for højt, men inden for 25% af den
                 rigtige pris.
               </p>
               <br />
               <div class="guess-container transparent-background">
-                <div class="guess-value-container animate__flipInX">16.00 kr.</div>
+                <div class="guess-value-container animate__flipInX">16,00 kr.</div>
                 <div
                   class="guess-direction-container animate__flipInX guess-win"
                 >
@@ -205,7 +200,7 @@
                 </div>
               </div>
               <p>
-                Gættet på 16.00 kr. var inden for 50 øre af den rigtige pris. Du
+                Gættet på 16,00 kr. var inden for 50 øre af den rigtige pris. Du
                 vandt!
               </p>
             </div>

@@ -225,7 +225,7 @@ function updateGameBoard() {
 function updateGuessStat() {
   const guessStats = document.getElementById("game-stats");
   //The store is revealed with the price once the game is over
-  const priceLine = `<center>Prisen var ${productPrice.toFixed(2)} kr.${
+  const priceLine = `<center>Prisen var ${formatPrice(productPrice)}${
     productStore ? ` hos ${productStore}` : ""
   }</center>`;
 
@@ -278,7 +278,8 @@ function buttonEventListener() {
 }
 
 function handleInput() {
-  const strippedString = input.value.replaceAll(",", "");
+  //The input uses a Danish decimal comma (9,97). Guesses are stored with a dot ("9.97")
+  const strippedString = input.value.replace(",", ".");
   const guess = Number(strippedString).toFixed(2);
 
   if (isNaN(guess) || !strippedString) {
@@ -392,7 +393,7 @@ function addEventListeners() {
   buttonInput.addEventListener("click", buttonEventListener);
 
   input.addEventListener("focus", () => {
-    input.setAttribute("placeholder", "0.00");
+    input.setAttribute("placeholder", "0,00");
   });
   input.addEventListener("blur", () => {
     input.setAttribute("placeholder", "Indtast et gæt...");
@@ -469,7 +470,7 @@ function displayGuess(guess, index = gameState.guesses.length) {
 
   infoContainer.classList.add("guess-direction-container", "animate__flipInX");
 
-  guessValueContainer.innerHTML = `${guess.guess} kr.`;
+  guessValueContainer.innerHTML = formatPrice(Number(guess.guess));
 
   infoContainer.classList.add(guess.closeness);
   infoContainer.innerHTML = guess.direction;
@@ -483,6 +484,14 @@ function displayGuess(guess, index = gameState.guesses.length) {
   }, 500);
 
   updateGuessStat();
+}
+
+//Danish price format: 9.97 -> "9,97 kr.", 1299 -> "1.299,00 kr."
+function formatPrice(value) {
+  return `${value.toLocaleString("da-DK", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })} kr.`;
 }
 
 /*
