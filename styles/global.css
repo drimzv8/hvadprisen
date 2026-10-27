@@ -107,6 +107,8 @@ img {
   justify-content: space-between;
 
   width: 356px;
+  /* Shrinks on very narrow phones instead of scrolling sideways */
+  max-width: calc(100vw - 16px);
 
   border-bottom: 3px solid var(--red);
 }
@@ -126,11 +128,12 @@ img {
   font-size: 30px;
   font-weight: 600;
 
-  width: 58px;
+  width: 24px;
   height: 60px;
+  padding: 0;
 
   cursor: pointer;
-  text-align: left;
+  text-align: center;
 
   color: var(--ink);
   border: none;
@@ -142,8 +145,6 @@ img {
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
-
-  width: 58px;
 }
 
 #archive-button {
@@ -210,6 +211,12 @@ img {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--red);
+}
+
+@media screen and (max-width: 360px) {
+  .title {
+    font-size: 26px;
+  }
 }
 
 @media screen and (max-height: 900px) {
