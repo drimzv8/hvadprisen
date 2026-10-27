@@ -1,3 +1,12 @@
+/* Inter (SIL Open Font License, see assets/fonts/OFL-Inter.txt), variable weight 100-900 */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../assets/fonts/inter-latin-wght-normal.woff2") format("woff2");
+}
+
 :root {
   --bg: #faf9f6;
   --surface: #ffffff;

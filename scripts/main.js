@@ -259,6 +259,7 @@ function useStoreHint() {
   gameState.usedHint = true;
   saveGameState();
   updateGuessStat();
+  trackEvent("Hint brugt", { spil: playedGameNumber });
 }
 
 /*
@@ -310,6 +311,8 @@ function handleInput() {
 }
 
 function copyStats() {
+  trackEvent("Del klikket", { spil: playedGameNumber });
+
   let output = `HVADPRISEN? #${playedGameNumber}`;
   if (!gameState.hasWon) {
     output += ` X/6`;
@@ -521,6 +524,7 @@ function gameWon() {
     localStorage.setItem("stats", JSON.stringify(userStats));
   }
 
+  trackGameFinished("vundet");
   removeEventListeners();
   convertToShareButton();
 }
@@ -531,8 +535,36 @@ function gameLost() {
     localStorage.setItem("stats", JSON.stringify(userStats));
   }
 
+  trackGameFinished("tabt");
   removeEventListeners();
   convertToShareButton();
+}
+
+/*
+  Cookieless analytics. Sends to Plausible or Umami if their script is on the page,
+  otherwise does nothing. No personal data or saved progress is sent
+*/
+
+function trackEvent(name, props) {
+  try {
+    if (typeof window.plausible === "function") {
+      window.plausible(name, { props });
+    } else if (window.umami && typeof window.umami.track === "function") {
+      window.umami.track(name, props);
+    }
+  } catch (error) {
+    //Analytics must never break the game
+  }
+}
+
+function trackGameFinished(result) {
+  trackEvent("Spil afsluttet", {
+    resultat: result,
+    gaet: gameState.guesses.length,
+    type: isArchiveGame ? "arkiv" : "dagens",
+    hint: gameState.usedHint ? "ja" : "nej",
+    spil: playedGameNumber,
+  });
 }
 
 /*
@@ -569,6 +601,7 @@ function switchState(event) {
   function renderArchive() {
     title.innerHTML = `SPIL<span class="brand-red">ARKIV</span>`;
     overlayElem.style.display = "flex";
+    trackEvent("Arkiv åbnet");
 
     //Rebuild the list each time so results from this session are current
     document.getElementById("archive-list").innerHTML = "";
