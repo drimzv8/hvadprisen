@@ -768,10 +768,12 @@ function getPlayedGameNumber() {
 */
 
 function getGameNumber() {
+  //Counts calendar days in local time, so a daylight saving change can't move the switch away from midnight
   const currDate = new Date();
-  let timeDifference = currDate.getTime() - gameStartDate.getTime();
-  let dayDifference = timeDifference / (1000 * 3600 * 24);
+  const today = Date.UTC(currDate.getFullYear(), currDate.getMonth(), currDate.getDate());
+  const start = Date.UTC(gameStartDate.getFullYear(), gameStartDate.getMonth(), gameStartDate.getDate());
+  let dayDifference = (today - start) / (1000 * 3600 * 24);
 
-  return Math.floor(dayDifference) + 1;
+  return dayDifference + 1;
 }
 
