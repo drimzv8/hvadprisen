@@ -81,123 +81,163 @@
   },
   "game-11": {
     "date": "2026-11-01",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Coca-Cola, 1,5 L",
+    "price": "17.00 kr.",
+    "image": "./assets/products/coca-cola.jpg",
+    "store": "Netto",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-12": {
     "date": "2026-11-02",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Toms Kæmpe Skildpadder, 84 g",
+    "price": "26.95 kr.",
+    "image": "./assets/products/toms-kaempe-skildpadder.jpg",
+    "store": "Føtex",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-13": {
     "date": "2026-11-03",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Egelykke minimælk, 1 L",
+    "price": "10.60 kr.",
+    "image": "./assets/products/egelykke-minimaelk.jpg",
+    "store": "Netto",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-14": {
     "date": "2026-11-04",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Ben & Jerry's Cookie Dough, 465 ml",
+    "price": "45.00 kr.",
+    "image": "./assets/products/ben-jerrys-cookie-dough.jpg",
+    "store": "Føtex",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-15": {
     "date": "2026-11-05",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Schulstad kernerugbrød, 750 g",
+    "price": "26.50 kr.",
+    "image": "./assets/products/schulstad-kernerugbroed.jpg",
+    "store": "Netto",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-16": {
     "date": "2026-11-06",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Ga-Jol original, 46 g",
+    "price": "14.95 kr.",
+    "image": "./assets/products/ga-jol.jpg",
+    "store": "Netto",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-17": {
     "date": "2026-11-07",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Heinz tomatketchup, 580 g",
+    "price": "40.00 kr.",
+    "image": "./assets/products/heinz-ketchup.jpg",
+    "store": "Netto",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-18": {
     "date": "2026-11-08",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Red Bull, 250 ml",
+    "price": "15.00 kr.",
+    "image": "./assets/products/red-bull.jpg",
+    "store": "Netto",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-19": {
     "date": "2026-11-09",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Dava skrabeæg M/L, 10 stk.",
+    "price": "31.95 kr.",
+    "image": "./assets/products/dava-aeg.jpg",
+    "store": "Netto",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-20": {
     "date": "2026-11-10",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Galle & Jessen mælkepålægschokolade, 216 g",
+    "price": "45.00 kr.",
+    "image": "./assets/products/galle-jessen.jpg",
+    "store": "Føtex",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-21": {
     "date": "2026-11-11",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "KiMs snack chips original, 145 g",
+    "price": "29.95 kr.",
+    "image": "./assets/products/kims-snack-chips.jpg",
+    "store": "Netto",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-22": {
     "date": "2026-11-12",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Avocado, 1 stk.",
+    "price": "9.00 kr.",
+    "image": "./assets/products/avocado.webp",
+    "store": "REMA 1000",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-23": {
     "date": "2026-11-13",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Haribo Super Piratos, 250 g",
+    "price": "29.95 kr.",
+    "image": "./assets/products/haribo-super-piratos.jpg",
+    "store": "Netto",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-24": {
     "date": "2026-11-14",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Nescafé Gold refill, 210 g",
+    "price": "76.65 kr.",
+    "image": "./assets/products/nescafe-gold.webp",
+    "store": "REMA 1000",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-25": {
     "date": "2026-11-15",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Oreo Original, 154 g",
+    "price": "25.95 kr.",
+    "image": "./assets/products/oreo.jpg",
+    "store": "Netto",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-26": {
     "date": "2026-11-16",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Samelle toiletpapir 4-lags, 10 ruller",
+    "price": "36.95 kr.",
+    "image": "./assets/products/samelle-toiletpapir.jpg",
+    "store": "Netto",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-27": {
     "date": "2026-11-17",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Kinder Bueno, 43 g",
+    "price": "13.00 kr.",
+    "image": "./assets/products/kinder-bueno.jpg",
+    "store": "Føtex",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-28": {
     "date": "2026-11-18",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "La Campagna spaghetti, 500 g",
+    "price": "4.95 kr.",
+    "image": "./assets/products/spaghetti.jpg",
+    "store": "Netto",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-29": {
     "date": "2026-11-19",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Cocio kakaomælk, 600 ml",
+    "price": "24.75 kr.",
+    "image": "./assets/products/cocio.jpg",
+    "store": "Føtex",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-30": {
     "date": "2026-11-20",
-    "name": "Placeholder",
-    "price": "10.00 kr.",
-    "image": "./assets/products/placeholder.svg"
+    "name": "Banan, 1 stk.",
+    "price": "2.50 kr.",
+    "image": "./assets/products/banan.jpg",
+    "store": "Netto",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-31": {
     "date": "2026-11-21",
