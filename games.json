@@ -1,80 +1,83 @@
 {
   "game-1": {
     "date": "2026-10-22",
-    "name": "Lurpak Smør, 200 g",
-    "price": "15.00 kr.",
-    "image": "./assets/products/lurpak.png",
-    "store": "Netto"
+    "name": "Lurpak saltet smør, 200 g",
+    "price": "19.95 kr.",
+    "image": "./assets/products/lurpak.jpg",
+    "store": "Netto",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-2": {
     "date": "2026-10-23",
-    "name": "Sodavand, 2 L (Faxe Kondi / Pepsi Max)",
-    "price": "16.00 kr.",
-    "image": "./assets/products/sodavand.png",
-    "store": "Netto"
+    "name": "Faxe Kondi, 2 L",
+    "price": "18.00 kr.",
+    "image": "./assets/products/faxe-kondi.jpg",
+    "store": "Netto",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-3": {
     "date": "2026-10-24",
-    "name": "Nørregade julekalender, 1 KG",
-    "price": "299.00 kr.",
-    "image": "./assets/products/Norregadejul.png",
-    "store": "REMA 1000"
+    "name": "Nørregade julekalender m. blandet slik, 1 kg",
+    "price": "399.00 kr.",
+    "image": "./assets/products/norregade-julekalender.jpg",
+    "store": "Bilka",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-4": {
     "date": "2026-10-25",
-    "name": "Nutella, 200 g",
-    "price": "25.00 kr.",
+    "name": "Nutella, 350 g",
+    "price": "47.95 kr.",
     "image": "./assets/products/nutella.jpg",
     "store": "Netto",
-    "source": "Netto avis 24.–30. okt. 2026, side 2"
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-5": {
     "date": "2026-10-26",
-    "name": "Mutti tomater, 400 g",
-    "price": "9.97 kr.",
+    "name": "Mutti finthakkede tomater, 400 g",
+    "price": "20.75 kr.",
     "image": "./assets/products/mutti.jpg",
     "store": "Netto",
-    "source": "Netto avis 24.–30. okt. 2026, side 8"
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-6": {
     "date": "2026-10-27",
     "name": "ØGO økologisk feta, 150 g",
-    "price": "20.00 kr.",
+    "price": "27.95 kr.",
     "image": "./assets/products/oego-feta.jpg",
     "store": "Netto",
-    "source": "Netto avis 24.–30. okt. 2026, side 9"
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-7": {
     "date": "2026-10-28",
-    "name": "Cheasy yoghurt, 1 L",
-    "price": "12.00 kr.",
+    "name": "Cheasy yoghurt naturel, 1 kg",
+    "price": "20.00 kr.",
     "image": "./assets/products/cheasy.jpg",
     "store": "Netto",
-    "source": "Netto avis 24.–30. okt. 2026, side 2"
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-8": {
     "date": "2026-10-29",
-    "name": "BKI formalet kaffe, 350–400 g",
-    "price": "35.00 kr.",
+    "name": "BKI Extra formalet kaffe, 400 g",
+    "price": "44.95 kr.",
     "image": "./assets/products/bki.jpg",
     "store": "Netto",
-    "source": "Netto avis 24.–30. okt. 2026, side 1"
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-9": {
     "date": "2026-10-30",
-    "name": "Mentos, 37,5–38 g",
-    "price": "5.00 kr.",
+    "name": "Mentos mint, 38 g",
+    "price": "12.95 kr.",
     "image": "./assets/products/mentos.jpg",
-    "store": "Netto",
-    "source": "Netto avis 24.–30. okt. 2026, side 3"
+    "store": "Føtex",
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-10": {
     "date": "2026-10-31",
-    "name": "ØGO økologisk hokkaido græskar, pr. stk.",
-    "price": "15.00 kr.",
+    "name": "Økologisk hokkaido græskar, pr. stk.",
+    "price": "20.00 kr.",
     "image": "./assets/products/hokkaido.jpg",
     "store": "Netto",
-    "source": "Netto avis 24.–30. okt. 2026, side 9"
+    "source": "goma.gg, normalpris 3. nov. 2026"
   },
   "game-11": {
     "date": "2026-11-01",
